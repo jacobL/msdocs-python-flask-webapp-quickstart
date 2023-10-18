@@ -19,7 +19,7 @@ def index():
     cur = conn.cursor()
     cur.execute('select * from aism_accounts')
     for r in cur :
-        n = r[0]
+        n = r[1]+os.getenv("gg")
     #print(r)
     
     print('Request for index page received : ',n)
