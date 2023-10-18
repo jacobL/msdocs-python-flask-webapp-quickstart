@@ -1,5 +1,5 @@
 import os
-
+import pymssql
 from flask import (Flask, redirect, render_template, request,
                    send_from_directory, url_for)
 
@@ -8,8 +8,22 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-   print('Request for index page received')
-   return render_template('index.html')
+    conn = pymssql.connect(
+    server='iddlinedb.database.windows.net', 
+    user='idd',
+    password='9l5YHtOCTyRJ',
+    database='iddlinedb',
+    as_dict=False
+    )
+    n = 'd'
+    cur = conn.cursor()
+    cur.execute('select * from aism_accounts')
+    for r in cur :
+        n = r[0]
+    #print(r)
+    
+    print('Request for index page received : ',n)
+    return render_template('index.html',name=n)
 
 @app.route('/favicon.ico')
 def favicon():
