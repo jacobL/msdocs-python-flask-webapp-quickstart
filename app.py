@@ -16,10 +16,11 @@ def index():
     as_dict=False
     )
     n = 'd'
+    app.config.from_object('iddline3.development')
     cur = conn.cursor()
     cur.execute('select * from aism_accounts')
     for r in cur :
-        n = r[1]+os.environ['gg']   #os.getenv("gg")
+        n = r[1] #+os.environ['gg']   #os.getenv("gg")
     #print(r)
     
     print('Request for index page received : ',n)
