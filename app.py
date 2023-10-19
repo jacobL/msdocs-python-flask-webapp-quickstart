@@ -1,5 +1,6 @@
 import os
 import pymssql
+import pymysql
 from flask import (Flask, redirect, render_template, request,
                    send_from_directory, url_for)
 
@@ -8,6 +9,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
+    """
     conn = pymssql.connect(
     server='iddlinedb.database.windows.net', 
     user='idd',
@@ -21,8 +23,9 @@ def index():
     cur.execute('select * from aism_accounts')
     for r in cur :
         n = r[0] #os.environ['gg']   #os.getenv("gg")
-    #print(r)
-    
+    """ 
+  
+    n='ccc'
     print('Request for index page received : ',n)
     return render_template('index.html',name=n)
 
