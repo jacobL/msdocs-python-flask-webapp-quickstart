@@ -31,7 +31,7 @@ def index():
     cur = conn.cursor()
     cur.execute('select * from aism_accounts')
     for r in cur :
-        n = r[1] 
+        n = r[1]+'==1 '
     
     print('Request for index page received : ',n)
     return render_template('index.html',name=n)
