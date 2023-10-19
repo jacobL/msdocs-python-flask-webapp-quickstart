@@ -1,6 +1,15 @@
 Flask==2.0.2
 gunicorn
 Werkzeug==2.2.2
+python-dotenv==0.10.3 
+
+
+scikit_learn
+firebase==4.0.1 
+line_bot_sdk==2.4.2
+Requests==2.28.2
+SQLAlchemy==2.0.17
+PyMySQL==1.1.0 
 python-dotenv==0.10.3
-pymssql 
-pymysql
+psycopg2-binary
+pymssql
