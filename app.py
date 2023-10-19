@@ -27,7 +27,7 @@ def index():
     n='ccc'
     conn  =  pymysql . connect ( 
     host = 'linemysql.mysql.database.azure.com' ,port=3306 ,  
-    user = 'idd' ,  passwd = "9l5YHtOCTyRJ" ) 
+    user = 'idd' ,  passwd = "9l5YHtOCTyRJ",db="linemysql" ) 
     cur = conn.cursor()
     cur.execute('select * from aism_accounts')
     for r in cur :
