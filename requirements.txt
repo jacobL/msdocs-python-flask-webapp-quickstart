@@ -1,5 +1,6 @@
 Flask==2.0.2
 gunicorn
 Werkzeug==2.2.2
-pymssql
-python-dotenv
+python-dotenv==0.10.3
+pymssql 
+pymysql
