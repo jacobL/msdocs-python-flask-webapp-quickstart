@@ -24,11 +24,15 @@ def index():
     for r in cur :
         n = r[0] #os.environ['gg']   #os.getenv("gg")
     """ 
+    n='ccc'
     conn  =  pymysql . connect ( 
     host = 'linemysql.mysql.database.azure.com' ,port=3306 ,  
     user = 'idd' ,  passwd = "9l5YHtOCTyRJ" ) 
     cur = conn.cursor()
-    n='ccc'
+    cur.execute('select * from aism_accounts')
+    for r in cur :
+        n = r[1] 
+    
     print('Request for index page received : ',n)
     return render_template('index.html',name=n)
 
